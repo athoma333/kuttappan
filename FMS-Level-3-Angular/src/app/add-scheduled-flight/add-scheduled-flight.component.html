@@ -1,0 +1,73 @@
+<style>
+    .wrapper{
+    min-height: 90vh;
+  }
+  a{
+     color:  #FF8040;
+    }
+    
+    </style>
+<div class="view" style="background-image: url('assets/aeroplane-bg.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+    <nav class="navbar navbar-dark">
+      <div class="navbar-brand">
+        <img src="assets/aeroplane.png" width="40" height="40" class="d-inline-block align-top" alt="">
+        <b>Flight Reservation System</b>
+    </div>
+    <div>
+    <button type = "button" class ="btn btn-danger pull-right">LOGOUT</button>
+    </div>
+</nav>  
+  <div class="wrapper">
+    <div class="container ">
+  
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="scheduledFlight/add" (click)="add()" >ADD</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="scheduledFlight/show" (click)="view()">VIEW</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="scheduledFlight/search" (click)="search()">SEARCH</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="scheduledFlight/modify" (click)="search()">MODIFY</a>
+      </li>
+    </ul>
+   <br><br>
+    
+    <div class="container card shadow-lg p-3 mb-5 bg-white rounded">
+      <h3 class="font-weight-bold">Add ScheduleFlight  </h3>
+      <section style="border: 2px solid black; padding: 20px;">
+      <form ngNativeValidate #form>
+        <label>ScheduleFlightId :</label>
+        <input [(ngModel)]="scheduleFlight.scheduleFlightId" [ngModelOptions]="{standalone: true}" type="number" class="form-control" id="scheduleFlightId" required>
+        
+        <br>
+        <label>Source Airport :</label>
+        <input [(ngModel)]="srcAirport" [ngModelOptions]="{standalone: true}" type="number" class="form-control" id="sourceAirport" required>
+        <br>
+        <label>Destination Airport :</label>
+        <input [(ngModel)]="dstnAirport" [ngModelOptions]="{standalone: true}" type="number" class="form-control" id="destAirport" required>
+         
+        <br>
+        <label>Departure Time :</label>
+        <input [(ngModel)]="deptDateTime" [ngModelOptions]="{standalone: true}" type="number" class="form-control" id="deptDateTime" required>
+        <br>
+        <label>Arrival Time :</label>
+        <input [(ngModel)]="arrDateTime" [ngModelOptions]="{standalone: true}" type="number" class="form-control" id="arrDateTime" required>
+         <br>
+          <div class="col-md-3 offset-md-9">
+              <input  type="button" class="confBtn btn btn-success" (click)="addScheduleFlight()" >
+          </div>
+        </form>
+      </section>
+        </div>
+      </div>
+    </div>
+ 
+<footer class="navbar navbar-light bg-light" style="padding: 10px;">
+    Flight Reservation System
+    <span style="float: right;">2020</span>
+</footer>   
+</div>
